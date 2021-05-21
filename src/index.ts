@@ -11,7 +11,7 @@ const dataSource = [3, 1, '939', null, 3, 1.7, { numb: 3 }, undefined, 'number']
 const source$ = from(dataSource);
 
 const result$ = source$.pipe(
-  filter(val =>  isNumber(val)),  //val!==undefined || !isNaN(val)
+  filter(val =>  isNumber(val)), 
   reduce((acc, val) => acc + +val!, 0)
   );
 result$.subscribe(value => console.log("Sum = ", value));
